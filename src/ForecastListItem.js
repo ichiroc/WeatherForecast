@@ -26,9 +26,11 @@ const styles = StyleSheet.create({
   }
 })
 
-class ForecastListItem extends Component<Props> {
+export default class ForecastListItem extends Component<Props> {
   render() {
     const { item } = this.props;
+    console.log('hey!')
+    console.log(`item: ${item}`)
     return (
       <View style={styles.container}>
         <Text style={styles.text}>

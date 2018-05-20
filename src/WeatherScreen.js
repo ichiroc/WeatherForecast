@@ -46,17 +46,21 @@ class WeatherScreen extends Component<{}> {
       .then(current =>
         this.setState({ current }));
     getWeatherForecast(tokyo)
-      .then(forecasts =>
-        this.setState({ forecasts }));
+      .then(forecasts =>{
+        this.setState({ forecasts })
+      });
   }
 
   renderForecasts() {
-    return (
+    return  (
       <FlatList
         data={this.state.forecasts}
         renderItem={({ item }) =>
-          <ForecastListItem item={item} />
+          {
+            return <ForecastListItem item={item} />
+          }
         }
+        keyExtractor={item => item.date.toString()}
       />
     );
   }
