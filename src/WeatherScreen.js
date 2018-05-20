@@ -5,26 +5,60 @@ import {
   Text,
   Image,
   ActivityIndicator,
-  StyleSheet
+  StyleSheet,
+  FlatList,
 } from 'react-native';
 import CurrentWeather from './CurrentWeather';
-import { getCurrentWeather } from './WeatherService'
+import WeatherForecast from './WeatherForecast';
+import { getCurrentWeather, getWeatherForecast } from './WeatherService';
+import ForecastListItem from './ForecastListItem';
 
 type State = {
   current: ?CurrentWeather,
+  forecasts: WeatherForecast[],
 }
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 20
+  },
+  text: {
+    fontSize: 20,
+    marginVertical: 8,
+  },
+  icon: {
+    width: 100,
+    height: 100,
+  },
+});
+
 class WeatherScreen extends Component<{}> {
-  constructor(props: {}){
+  constructor(props: {}) {
     super(props);
-    this.state = { current: null };
+    this.state = { current: null, forecasts: [] };
   }
   componentDidMount() {
-    getCurrentWeather('Tokyo')
-      .then((current) => {
-        console.log('天気情報の取得完了');
-        this.setState({ current });
-      });
+    const tokyo = 'Tokyo';
+    getCurrentWeather(tokyo)
+      .then(current =>
+        this.setState({ current }));
+    getWeatherForecast(tokyo)
+      .then(forecasts =>
+        this.setState({ forecasts }));
+  }
+
+  renderForecasts() {
+    return (
+      <FlatList
+        data={this.state.forecasts}
+        renderItem={({ item }) =>
+          <ForecastListItem item={item} />
+        }
+      />
+    );
   }
 
   render() {
@@ -34,7 +68,7 @@ class WeatherScreen extends Component<{}> {
         <View style={styles.container}>
           <ActivityIndicator />
         </View>
-      )
+      );
     }
     const { main, iconURL } = current;
     return (
@@ -46,25 +80,10 @@ class WeatherScreen extends Component<{}> {
           source={{ uri: iconURL }}
           style={styles.icon}
         />
+        {this.renderForecasts()}
       </View>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  text: {
-    fontSize: 20,
-    marginVertical: 8,
-  },
-  icon: {
-    width: 100,
-    height: 100,
-  },
-});
 
 export default WeatherScreen;

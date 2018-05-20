@@ -16,4 +16,21 @@ function getCurrentWeather(city: string) : Promise<CurrentWeather> {
     .then(json => new CurrentWeather(json))
 }
 
-export { getCurrentWeather }
+function getWeatherForecastEndpoint(city: *) {
+  const { en, latitude, longitude } = city;
+  if (latitude && longitude) {
+    return `${BASE_URL}forecast`
+         + `?lat=${latitude}&lon=${longitude}`
+         + `&appid=${API_KEY}&lang=ja`;
+  }
+  return `${BASE_URL}forecast?q=${en}&appid=${API_KEY}&lang=ja`;
+}
+
+function getWeatherForecast(city: *): Promise<WeatherForecast[]> {
+  const endpoint = getWeatherForecastEndpoint(city);
+  return fetch(endpoint)
+    .then(response => response.json())
+    .then(json => json.list.map(item => new WeatherForecast(item)));
+}
+
+export { getCurrentWeather, getWeatherForecast }
