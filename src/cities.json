@@ -1,0 +1,190 @@
+[
+  {
+    "name": "北海道",
+    "en": "Hokkaidō"
+  },
+  {
+    "name": "青森県",
+    "en": "Aomori-ken"
+  },
+  {
+    "name": "岩手県",
+    "en": "Iwate-ken"
+  },
+  {
+    "name": "宮城県",
+    "en": "Miyagi-ken"
+  },
+  {
+    "name": "秋田県",
+    "en": "Akita-ken"
+  },
+  {
+    "name": "山形県",
+    "en": "Yamagata-ken"
+  },
+  {
+    "name": "福島県",
+    "en": "Fukushima-ken"
+  },
+  {
+    "name": "茨城県",
+    "en": "Ibaraki-ken"
+  },
+  {
+    "name": "栃木県",
+    "en": "Tochigi-ken"
+  },
+  {
+    "name": "群馬県",
+    "en": "Gunma-ken"
+  },
+  {
+    "name": "埼玉県",
+    "en": "Saitama-ken"
+  },
+  {
+    "name": "千葉県",
+    "en": "Chiba-ken"
+  },
+  {
+    "name": "東京都",
+    "en": "Tōkyō-to"
+  },
+  {
+    "name": "神奈川県",
+    "en": "Kanagawa-ken"
+  },
+  {
+    "name": "新潟県",
+    "en": "Niigata-ken"
+  },
+  {
+    "name": "富山県",
+    "en": "Toyama-ken"
+  },
+  {
+    "name": "石川県",
+    "en": "Ishikawa-ken"
+  },
+  {
+    "name": "福井県",
+    "en": "Fukui-ken"
+  },
+  {
+    "name": "山梨県",
+    "en": "Yamanashi-ken"
+  },
+  {
+    "name": "長野県",
+    "en": "Nagano-ken"
+  },
+  {
+    "name": "岐阜県",
+    "en": "Gifu-ken"
+  },
+  {
+    "name": "静岡県",
+    "en": "Shizuoka-ken"
+  },
+  {
+    "name": "愛知県",
+    "en": "Aichi-ken"
+  },
+  {
+    "name": "三重県",
+    "en": "Mie-ken"
+  },
+  {
+    "name": "滋賀県",
+    "en": "Shiga-ken"
+  },
+  {
+    "name": "京都府",
+    "en": "Kyōto-fu"
+  },
+  {
+    "name": "大阪府",
+    "en": "Ōsaka-fu"
+  },
+  {
+    "name": "兵庫県",
+    "en": "Hyōgo-ken"
+  },
+  {
+    "name": "奈良県",
+    "en": "Nara-ken"
+  },
+  {
+    "name": "和歌山県",
+    "en": "Wakayama-ken"
+  },
+  {
+    "name": "鳥取県",
+    "en": "Tottori-ken"
+  },
+  {
+    "name": "島根県",
+    "en": "Shimane-ken"
+  },
+  {
+    "name": "岡山県",
+    "en": "Okayama-ken"
+  },
+  {
+    "name": "広島県",
+    "en": "Hiroshima-ken"
+  },
+  {
+    "name": "山口県",
+    "en": "Yamaguchi-ken"
+  },
+  {
+    "name": "徳島県",
+    "en": "Tokushima-ken"
+  },
+  {
+    "name": "香川県",
+    "en": "Kagawa-ken"
+  },
+  {
+    "name": "愛媛県",
+    "en": "Ehime-ken"
+  },
+  {
+    "name": "高知県",
+    "en": "Kōchi-ken"
+  },
+  {
+    "name": "福岡県",
+    "en": "Fukuoka-ken"
+  },
+  {
+    "name": "佐賀県",
+    "en": "Saga-ken"
+  },
+  {
+    "name": "長崎県",
+    "en": "Nagasaki-ken"
+  },
+  {
+    "name": "熊本県",
+    "en": "Kumamoto-ken"
+  },
+  {
+    "name": "大分県",
+    "en": "Ōita-ken"
+  },
+  {
+    "name": "宮崎県",
+    "en": "Miyazaki-ken"
+  },
+  {
+    "name": "鹿児島県",
+    "en": "Kagoshima-ken"
+  },
+  {
+    "name": "沖縄県",
+    "en": "Okinawa-ken"
+  }
+]
