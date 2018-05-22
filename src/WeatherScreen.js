@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 20
+    marginTop: 20,
   },
   text: {
     fontSize: 20,
@@ -41,12 +41,13 @@ class WeatherScreen extends Component<{}> {
     this.state = { current: null, forecasts: [] };
   }
   componentDidMount() {
-    const tokyo = 'Tokyo';
-    getCurrentWeather(tokyo)
+    const { navigation } = this.props;
+    const { city } = navigation.state.params;
+    getCurrentWeather(city)
       .then(current =>
         this.setState({ current }));
-    getWeatherForecast(tokyo)
-      .then(forecasts =>{
+    getWeatherForecast(city)
+      .then((forecasts) => {
         this.setState({ forecasts })
       });
   }

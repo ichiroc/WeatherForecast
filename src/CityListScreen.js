@@ -6,18 +6,47 @@ import {
   FlatList,
   StyleSheet,
 } from 'react-native';
+// NOTE: react-navigation の 1.0.0-beta.19 しか呼び出せない
+import { type NavigationScreenProp } from 'react-navigation/src/TypeDefinition';
+import { getCoordinates } from './GeolocationService';
 import CITIES from './cities.json';
 
+type State = {
+  data: *[],
+}
+
+type Props = {
+  navigation: NavigationScrenProp<*>,
+}
+
 class CityListScreen extends Component<{}> {
+  constructor(props: Props) {
+    super(props);
+    this.state = { data: CITIES };
+  }
+
+  componentDidMount() {
+    getCoordinates()
+      .then(({ latitude, longitude }) => {
+        CITIES.unshift({
+          name: '現在地',
+          en: '',
+          latitude,
+          longitude,
+        })
+        this.setState({ data: CITIES });
+      });
+  }
 
   onPress(item: *) {
-    console.log('onPress', item);
+    const { navigation } = this.props;
+    navigation.navigate('Weather', { city: item });
   }
 
   render() {
     return (
       <FlatList
-        data={CITIES}
+        data={this.state.data}
         keyExtractor={item => item.en}
         renderItem={({ item }) => (
           <TouchableOpacity

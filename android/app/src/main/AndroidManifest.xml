@@ -9,6 +9,7 @@
     <uses-sdk
         android:minSdkVersion="16"
         android:targetSdkVersion="22" />
+    <use-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
       android:name=".MainApplication"
