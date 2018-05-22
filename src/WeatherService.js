@@ -17,7 +17,7 @@ function getCurrentWeather(city: string) : Promise<CurrentWeather> {
   const endpoint = getCurrentWeatherEndpoint(city)
   return fetch(endpoint)
     .then(response => response.json())
-    .then(json => new CurrentWeather(json))
+    .then(json => new CurrentWeather(json));
 }
 
 function getWeatherForecastEndpoint(city: *) {

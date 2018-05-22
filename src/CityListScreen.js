@@ -16,7 +16,7 @@ type State = {
 }
 
 type Props = {
-  navigation: NavigationScrenProp<*>,
+  navigation: NavigationScreenProp<*>,
 }
 
 class CityListScreen extends Component<{}> {

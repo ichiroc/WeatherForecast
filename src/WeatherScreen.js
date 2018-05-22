@@ -40,15 +40,16 @@ class WeatherScreen extends Component<{}> {
     super(props);
     this.state = { current: null, forecasts: [] };
   }
+
   componentDidMount() {
     const { navigation } = this.props;
     const { city } = navigation.state.params;
     getCurrentWeather(city)
-      .then(current =>
+      .then((current) =>
         this.setState({ current }));
-    getWeatherForecast(city)
+    getWeatherForecast(city.en)
       .then((forecasts) => {
-        this.setState({ forecasts })
+        this.setState({ forecasts });
       });
   }
 
